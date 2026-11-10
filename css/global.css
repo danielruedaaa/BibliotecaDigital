@@ -1,0 +1,189 @@
+/* Global Styles & Variables */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+    /* Color Palette - User Defined */
+    --primary-color: #004AAD;
+    /* Blau Marí - Confiança i professionalitat */
+    --primary-hover: #003680;
+    /* Darker shade for hover */
+
+    --secondary-color: #FF6B6B;
+    /* Taronja/Corall - Contrast energètic */
+    --secondary-hover: #E55A5A;
+
+    /* Nota: User specified #0F3C6D for background but described "Blanc o Gris Clar". 
+       Using a light gray for readability as requested, reserving dark blue for text/accents if needed. */
+    --background-color: #F8FAFC;
+    /* Gris Clar - Promou llegibilitat */
+
+    --surface-color: #FFFFFF;
+
+    --text-main: #0F3C6D;
+    /* Using the Dark Blue specified in "Background" slot as the main text color instead, fits well */
+    --text-muted: #576F86;
+
+    --border-color: #E2E8F0;
+
+    --error-color: #D32F2F;
+    /* Vermell - Alerta */
+    --success-color: #4CAF50;
+    /* Verd - Èxit */
+
+    /* Typography */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    /* Font Sizes */
+    --font-h1: 48px;
+    --font-h2: 32px;
+    --font-h3: 20px;
+    --font-body-size: 16px;
+    --font-small: 12px;
+
+    /* Font Weights */
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-body-size);
+    font-weight: var(--weight-regular);
+    background-color: var(--background-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+    font-size: var(--font-h1);
+    font-weight: var(--weight-bold);
+}
+
+h2 {
+    font-size: var(--font-h2);
+    font-weight: var(--weight-semibold);
+}
+
+h3 {
+    font-size: var(--font-h3);
+    font-weight: var(--weight-medium);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+small,
+.text-small {
+    font-size: var(--font-small);
+    font-weight: var(--weight-light);
+}
+
+/* ===== Mejora visual Fita6: fondo, animaciones base ===== */
+body {
+    background:
+        radial-gradient(1000px 400px at 10% -5%, rgba(0,74,173,.08), transparent 60%),
+        radial-gradient(800px 350px at 95% 10%, rgba(255,107,107,.08), transparent 60%),
+        var(--background-color);
+}
+
+::selection { background: rgba(0,74,173,.2); }
+
+:focus-visible {
+    outline: 3px solid rgba(0,74,173,.35);
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 999px;
+    border: 2px solid var(--background-color);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes floatY {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes shimmer {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(200%); }
+}
+
+.fade-in { animation: fadeIn .5s ease both; }
+.slide-up { animation: fadeUp .55s cubic-bezier(.21,.9,.35,1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}

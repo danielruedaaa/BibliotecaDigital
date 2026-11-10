@@ -1,0 +1,271 @@
+/* Component Styles Refined for New Palette */
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    /* Roboto for buttons */
+    font-weight: var(--weight-medium);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    font-size: var(--font-body-size);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Secondary Action - Using the Coral Color as requested for Specific CTAs? 
+   Or keeping standard secondary? 
+   Let's make a specific class for the "Action" button (like Reserve) using the Secondary Color.
+*/
+.btn-action {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-action:hover {
+    background-color: var(--secondary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background-color: var(--surface-color);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--background-color);
+    border-color: var(--primary-color);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: var(--weight-medium);
+    color: var(--text-main);
+    font-size: var(--body-size);
+    /* 16px */
+}
+
+.form-input {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: var(--surface-color);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: var(--font-body);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+    /* Based on #004AAD */
+}
+
+.form-input[readonly], .form-input[disabled] {
+    background-color: #F1F5F9;
+    color: var(--text-muted);
+    cursor: not-allowed;
+    border-color: var(--border-color);
+}
+
+
+/* Cards */
+.card {
+    background-color: var(--surface-color);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Tags */
+.tag {
+    font-size: var(--font-small);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+}
+
+/* Alert Boxes */
+.alert-error {
+    background-color: #FEE2E2;
+    color: var(--error-color);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.875rem;
+    margin-top: 1rem;
+}
+
+.alert-error a {
+    color: var(--error-color);
+    text-decoration: underline;
+}
+
+.alert-success {
+    background-color: #DCFCE7;
+    color: #166534;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.875rem;
+    margin-top: 1rem;
+}
+
+.alert-success a {
+    color: #166534;
+    text-decoration: underline;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-full);
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.badge-publicat { background: #DCFCE7; color: #166534; }
+.badge-ocult { background: #FEF3C7; color: #92400E; }
+.badge-retirat { background: #FEE2E2; color: #991B1B; }
+.badge-eliminat { background: #E5E7EB; color: #374151; text-decoration: line-through; }
+
+/* Grid / Action Cell Utilities */
+.actions-cell {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+}
+
+.btn-xs {
+    padding: 0.2rem 0.45rem;
+    font-size: 0.7rem;
+}
+
+/* Alert Warnings & Info Summaries */
+.alert-warning {
+    background-color: #FEF3C7;
+    color: #92400E;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.875rem;
+}
+
+.delete-summary {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.delete-summary p {
+    margin-bottom: var(--spacing-xs);
+}
+
+.delete-summary strong {
+    display: inline-block;
+    width: 150px;
+}
+
+/* Status selection cards */
+.estat-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+.estat-option:hover {
+    border-color: var(--primary-color);
+}
+.estat-option.selected {
+    border-color: var(--primary-color);
+    background: #EFF6FF;
+}
+.estat-option input[type="radio"] {
+    margin-top: 0.2rem;
+}
+.estat-option .estat-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.estat-option .estat-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ===== Mejora visual: botones, cards, tablas con animación ===== */
+.btn { position: relative; overflow: hidden; }
+.btn:active { transform: scale(.97); }
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #2B6CB0);
+    box-shadow: 0 4px 14px rgba(0,74,173,.25);
+}
+.btn-primary::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; width: 50%;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent);
+    transform: translateX(-100%);
+}
+.btn-primary:hover::after { animation: shimmer .8s ease; }
+.btn-secondary { transition: all .25s ease; }
+.btn-secondary:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+.card {
+    transition: transform .25s ease, box-shadow .25s ease;
+    animation: fadeUp .5s ease both;
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+.form-input { transition: border-color .2s, box-shadow .2s, transform .2s; }
+.form-input:hover { border-color: #B6C6DA; }
+.form-input:focus { transform: translateY(-1px); }
+
+table tbody tr { transition: background .2s ease; }
+table tbody tr:hover { background: #F1F5FF; }
+
+.badge { letter-spacing: .04em; }
+.badge-publicat, .badge-ocult, .badge-retirat { box-shadow: inset 0 0 0 1px rgba(0,0,0,.06); }
+
+.alert-error, .alert-success, .alert-warning { animation: fadeUp .4s ease both; }
+
+.estat-option { transition: border-color .2s, background .2s, transform .2s; }
+.estat-option:hover { transform: translateX(3px); }
+.estat-option.selected { box-shadow: 0 4px 14px rgba(0,74,173,.12); }
+
+.actions-cell .btn { transition: transform .2s ease; }
+.actions-cell .btn:hover { transform: translateY(-2px); }
+
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accés | Biblioteca Digital</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .split-screen {
+            display: grid;
+            grid-template-columns: 1fr;
+            min-height: 100vh;
+        }
+
+        @media (min-width: 1024px) {
+            .split-screen {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .auth-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: var(--spacing-xl);
+            background-color: var(--surface-color);
+        }
+
+        .auth-content {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .hero-side {
+            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: var(--spacing-xl);
+        }
+
+        @media (min-width: 1024px) {
+            .hero-side {
+                display: flex;
+            }
+        }
+
+        .auth-header {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .auth-footer {
+            margin-top: var(--spacing-xl);
+            text-align: center;
+            font-size: var(--font-small);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="split-screen">
+        <!-- Esquerra: Formulari -->
+        <div class="auth-side">
+            <div class="auth-content">
+                <div class="auth-header">
+                    <h1>Biblioteca Digital</h1>
+                    <p style="color: var(--text-muted);">Accedeix al fons bibliogràfic en línia.</p>
+                </div>
+
+                <form action="login.php" method="POST">
+                    <div class="form-group">
+                        <label class="form-label" for="email">Correu Electrònic</label>
+                        <input type="email" id="email" class="form-input" placeholder="nom@exemple.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="password">Contrasenya</label>
+                        <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                        <div style="text-align: right; margin-top: 0.5rem;">
+                            <a href="forgot-password.html" style="font-size: var(--font-small);">Has oblidat la
+                                contrasenya?</a>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Iniciar Sessió</button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>No tens un compte? <a href="register.php">Registra't</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dreta: Imatge / Decoració -->
+        <div class="hero-side">
+            <div class="text-center">
+                <h2 style="font-size: 3rem; margin-bottom: 1rem;">Coneixement Obert</h2>
+                <p>Milers de llibres, articles i revistes al teu abast.</p>
+                <!-- Placeholder per imatge si cal -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

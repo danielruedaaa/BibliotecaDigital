@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panell Principal | El Meu Projecte</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div style="width: 24px; height: 24px; background: var(--primary-color); border-radius: 4px;"></div>
+                BiblioDigital
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <!-- Icon placeholder -->
+                    <span>El meu espai</span>
+                </a>
+                <a href="catalog.php" class="nav-item">
+                    <span>Catàleg</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span>Préstec Interbibliotecari</span>
+                </a>
+                <a href="profile.php" class="nav-item">
+                    <span>Configuració</span>
+                </a>
+                <a href="login.html" class="nav-item" style="margin-top: auto; color: var(--error-color);">
+                    <span>Tancar Sessió</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div>
+                    <h2 style="font-size: 1.25rem;">Hola, Estudiant</h2>
+                    <p style="color: var(--text-muted); font-size: 0.875rem;">Tens 2 llibres a punt de vèncer.</p>
+                </div>
+
+                <div class="user-profile">
+                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">El meu carnet</button>
+                    <div class="avatar">E</div>
+                </div>
+            </header>
+
+            <!-- Stats Widgets -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Préstecs Actius</div>
+                    <div class="stat-value">4</div>
+                    <div style="color: var(--text-muted); font-size: 0.875rem;">2 en termini verd</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Reserves</div>
+                    <div class="stat-value">1</div>
+                    <div style="color: var(--success-color); font-size: 0.875rem;">Disponible per recollir</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Historial de Lectura</div>
+                    <div class="stat-value">12</div>
+                    <div style="color: var(--text-muted); font-size: 0.875rem;">Llibres aquest any</div>
+                </div>
+            </section>
+
+            <!-- Recent Activity Table -->
+            <section>
+                <div class="flex-center" style="justify-content: space-between; margin-bottom: 1rem;">
+                    <h3 class="section-title" style="margin-bottom: 0;">Préstecs Actuals</h3>
+                    <button class="btn btn-secondary">Renovar Tot</button>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Títol</th>
+                                <th>Autor</th>
+                                <th>Data Retorn</th>
+                                <th>Estat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Història de l'Art</td>
+                                <td>E. Gombrich</td>
+                                <td>10/01/2026</td>
+                                <td><span style="color: var(--error-color);">Venciment proper</span></td>
+                            </tr>
+                            <tr>
+                                <td>Clean Code</td>
+                                <td>Robert C. Martin</td>
+                                <td>15/01/2026</td>
+                                <td><span style="color: var(--success-color);">En termini</span></td>
+                            </tr>
+                            <tr>
+                                <td>Disseny d'Interfícies</td>
+                                <td>Jakob Nielsen</td>
+                                <td>20/01/2026</td>
+                                <td><span style="color: var(--success-color);">En termini</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

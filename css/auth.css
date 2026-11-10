@@ -1,0 +1,110 @@
+/* Auth Styles for Split-Screen Layouts */
+
+.split-screen {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+}
+
+@media (min-width: 1024px) {
+    .split-screen {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.auth-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    background-color: var(--surface-color);
+}
+
+.auth-content {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.hero-side {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: var(--spacing-xl);
+}
+
+.hero-side.login-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #003680 100%);
+}
+
+.hero-side.register-hero {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #c0392b 100%);
+}
+
+.hero-side.activate-hero {
+    background: linear-gradient(135deg, var(--success-color) 0%, #2E7D32 100%);
+}
+
+@media (min-width: 1024px) {
+    .hero-side {
+        display: flex;
+    }
+}
+
+.auth-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.auth-footer {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    font-size: var(--font-small);
+}
+
+.alert-error {
+    background-color: #FEE2E2;
+    color: var(--error-color);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.875rem;
+}
+
+.alert-error a {
+    color: var(--error-color);
+    text-decoration: underline;
+}
+
+.alert-success {
+    background-color: #DCFCE7;
+    color: #166534;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.875rem;
+}
+
+.alert-success a {
+    color: #166534;
+    text-decoration: underline;
+}
+
+/* ===== Mejora visual auth: hero animado + entrada ===== */
+.auth-content { animation: fadeUp .55s cubic-bezier(.21,.9,.35,1) both; }
+.auth-side .btn-primary { box-shadow: 0 6px 18px rgba(0,74,173,.28); }
+.hero-side { position: relative; overflow: hidden; }
+.hero-side::before,
+.hero-side::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,.14);
+    animation: floatY 6s ease-in-out infinite;
+}
+.hero-side::before { width: 280px; height: 280px; top: -80px; right: -80px; }
+.hero-side::after { width: 180px; height: 180px; bottom: -50px; left: 10%; animation-delay: 1.2s; }
+.hero-side.login-hero,
+.hero-side.register-hero,
+.hero-side.activate-hero { background-size: 200% 200%; animation: gradientShift 10s ease infinite; }
+.hero-side > div { animation: fadeUp .7s ease both; position: relative; z-index: 1; }
