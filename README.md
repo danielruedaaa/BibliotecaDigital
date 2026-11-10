@@ -1,4 +1,4 @@
-# BiblioDigital — Fita6 Admin (PHP + MySQL)
+# BiblioDigital — (PHP + MySQL)
 
 Gestión de biblioteca: catálogo público, préstamos/reservas, activación por email y panel admin (alta/edición/stock/estados/borrado soft-hard con auditoría).
 
